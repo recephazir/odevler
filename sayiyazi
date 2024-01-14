@@ -1,0 +1,46 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace sayiyazi
+{
+    internal class Program
+    {
+        static void Main(string[] args)
+        {
+            string[] birlerdizi = { "","bir", "iki", "üç", "dört", "beş", "altı", "yedi", "sekiz", "dokuz" };
+            string[] onlardizi = { "","on", "yirmi", "otuz", "kırk", "elli", "altmış", "yetmiş", "seksen", "doksan" };
+            string[] yuzlerdizi = { " ", "yüz" };
+            int a;
+
+            Console.WriteLine("yazıya dönüştürmek istediğiniz sayıyı giriniz");
+            int.TryParse(Console.ReadLine(), out int sayi);
+
+            if (sayi >= 100 && sayi < 1000)
+            {
+                int yuzler = sayi / 100;
+                int onlar = (sayi % 100) / 10;
+                int birler = (sayi % 100) % 10;
+                if (yuzler == 1)
+                {
+                    Console.WriteLine(yuzlerdizi[1] + onlardizi[onlar] + birlerdizi[birler]);
+                }
+                else
+                {
+                    Console.WriteLine(birlerdizi[yuzler] + yuzlerdizi[1] + onlardizi[onlar] + birlerdizi[birler]);
+                }                
+            }
+
+            if (sayi < 100)
+            {
+                int onlar = (sayi / 10) - 1;
+                int birler = (sayi % 10) - 1;
+                Console.WriteLine(onlardizi[onlar] + birlerdizi[birler]);
+            }
+            Console.WriteLine("hatalı değer girdiniz");
+
+        }
+    }
+}
