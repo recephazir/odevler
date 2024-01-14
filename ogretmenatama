@@ -1,0 +1,35 @@
+using System;
+
+namespace ogretmenatama
+{
+    internal class Program
+    {
+        static void Main(string[] args)
+        {
+            int sayi1, sayi2, a;
+            string[] il = { "İstanbul","İzmir","Ankara","Antalya","Bursa","Trabzon","Kayseri" };
+            string[] ogretmen = { "Elif","Baran","Zeynep","Kerem","Ayşe","Can","Esra" };
+            bool[] A = new bool[ogretmen.Length];
+            bool[] B = new bool[il.Length];
+
+            Random rastgele = new Random();
+
+            for (a = 0; a < 7; a++)
+            {
+                do
+                {
+                    sayi1 = rastgele.Next(0, ogretmen.Length);
+                } while (A[sayi1]);
+                A[sayi1] = true;
+
+                do
+                {
+                    sayi2 = rastgele.Next(0, il.Length);
+                } while (B[sayi2]);
+                B[sayi2] = true;
+
+                Console.WriteLine(ogretmen[sayi1] + " = " + il[sayi2]);
+            }
+        }
+    }
+}
