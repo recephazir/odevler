@@ -1,0 +1,23 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace seksenuctopla
+{
+    internal class Program
+    {
+        static void Main(string[] args)
+        {
+            int sayi, takas=0, toplam;
+            Console.WriteLine("bir satı giriniz");
+            for (sayi = 0; sayi != 83; sayi = Convert.ToInt32(Console.ReadLine()))
+            {                
+                toplam = sayi + takas;
+                takas = toplam;
+                Console.WriteLine("yeni toplam = " + toplam);
+            }            
+        }
+    }
+}
